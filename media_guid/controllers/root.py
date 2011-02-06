@@ -58,11 +58,6 @@ class RootController(BaseController):
         """This method showcases how you can use the same controller for a data page and a display page"""
         return dict(params=kw)
 
-    @expose('media_guid.templates.authentication')
-    def auth(self):
-        """Display some information about auth* on this application."""
-        return dict(page='auth')
-
     @expose('media_guid.templates.index')
     @require(predicates.has_permission('manage', msg=l_('Only for managers')))
     def manage_permission_only(self, **kw):
